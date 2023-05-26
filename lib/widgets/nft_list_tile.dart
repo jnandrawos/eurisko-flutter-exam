@@ -28,18 +28,15 @@ class _NFTListTileState extends State<NFTListTile> {
                     Navigator.of(context)
                         .pushNamed(NFTDetailsScreen.routeName, arguments: nft);
                   },
-                  child: Container(
-                    height: 200,
-                    child: ListTile(
-                      leading: Image.network(
-                          nft?.nftImage?.small ??
-                              'https://craftsnippets.com/articles_images/placeholder/placeholder.jpg',
-                          height: 100),
-                      title: Text(nft?.name ?? ''),
-                      subtitle: nft?.floorPrice?.usd != null
-                          ? Text('Price: ${nft?.floorPrice?.usd} USD')
-                          : const SizedBox(),
-                    ),
+                  child: ListTile(
+                    leading: Image.network(
+                        nft?.nftImage?.small ??
+                            'https://craftsnippets.com/articles_images/placeholder/placeholder.jpg',
+                        height: 100),
+                    title: Text(nft?.name ?? ''),
+                    subtitle: nft?.floorPrice?.usd != null
+                        ? Text('Price: ${nft?.floorPrice?.usd} USD')
+                        : const SizedBox(),
                   ));
             } else {
               return ListTile(
